@@ -216,7 +216,7 @@
 
     // AMD (@see https://github.com/jashkenas/underscore/blob/master/underscore.js)
     if (typeof define == 'function' && define.amd) {
-      define('GB-dialog-compatible', [], function() {
+      define('GB-dialog', [], function() {
         return gbDialog;
       });
     }
