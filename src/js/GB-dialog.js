@@ -133,6 +133,7 @@
       typeof fnEvent.close === 'function' && fnEvent.close();
       hide(dialog);
     } else if (hasClass(target, 'gb-dialog-verify')) {
+      e.preventDefault();  //阻止默认事件
       typeof fnEvent.verify === 'function' && fnEvent.verify() && typeof fnEvent.confirm === 'function' && fnEvent.confirm();
     }
     
