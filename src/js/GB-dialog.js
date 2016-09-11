@@ -12,8 +12,7 @@
       overlayId = 'GB-overlay', dialogId = 'createDialog',
       overlay, dialog,
       dialogs,
-      fnEvent = {},
-      cl = ('classList' in document.createElement('a'));
+      fnEvent = {};
 
   function init() {
       build();   
@@ -120,7 +119,7 @@
   */
   function events(e) {
     e = e || window.event;
-    var target = e.target || e.srcELement;
+    var target = e.target || e.srcElement;
     var dialog = this;
     
     if (hasClass(target, 'gb-dialog-confirm')) {
