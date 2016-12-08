@@ -40,6 +40,7 @@
           eleChild = document.createElement('div');
       ele.id = overlayId;
       ele.className = 'gb-overlay';
+      ele.style.display = 'none';
       eleChild.id = dialogId;
       eleChild.className = 'gb-dialog';
       ele.appendChild(eleChild);
