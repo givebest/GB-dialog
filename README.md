@@ -8,6 +8,26 @@
 
 ## 使用
 
+### RequireJS
+
+	<script src="require.js"></script>
+	<script>
+		requirejs.config({
+			'baseUrl': 'js',
+			'paths': {
+                'GB-dialog': 'GB-dialog.min'
+            }
+		});
+
+		requirejs(['GB-dialog'], function(dialog) {
+			dialog.show({
+                title: '温馨提示',
+                content: '今天过完就是明天'
+            });
+		});
+	</script>
+
+
 ### Browser
 	
 	<link rel="stylesheet" href="css/GB-dialog.css">
