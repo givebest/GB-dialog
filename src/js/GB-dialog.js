@@ -210,16 +210,15 @@
       }
   };
 
-  window.gbDialog = gbDialog;
-    
-  // (@see https://github.com/madrobby/zepto/blob/master/src/zepto.js)
-  window.gbDialog === undefined && (window.dialog = gbDialog);
 
-    // AMD (@see https://github.com/jashkenas/underscore/blob/master/underscore.js)
-    if (typeof define == 'function' && define.amd) {
-      define('GB-dialog', [], function() {
-        return gbDialog;
-      });
-    }
+  // AMD (@see https://github.com/jashkenas/underscore/blob/master/underscore.js)
+  if (typeof define == 'function' && define.amd) {
+    define('GB-dialog', [], function() {
+      return gbDialog;
+    });
+  } else {
+    // (@see https://github.com/madrobby/zepto/blob/master/src/zepto.js)
+    window.gbDialog === undefined && (window.gbDialog = gbDialog);
+  }
 
 }());
