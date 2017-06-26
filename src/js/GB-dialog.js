@@ -12,6 +12,7 @@
       overlayId = 'GB-overlay', dialogId = 'createDialog',
       overlay, dialog,
       dialogs,
+      bodyScrollTop = 0,
       fnEvent = {};
 
   function init() {
@@ -55,7 +56,10 @@
    * @param {Object} opts
   */
   function show(opts) {
-      opts = opts || {};
+      var opts = opts || {};
+
+      // bodyScrollTop = domBody.scrollTop || domBody.style.top.replace(/\D|\s/g, '') || 0;
+      bodyScrollTop = domBody.scrollTop || -parseFloat(domBody.style.top) || 0;
 
       if (opts.id) {
         dialog = $(opts.id);
@@ -93,6 +97,10 @@
           dialogs[i].style.display = 'none';    
       }
 
+      domBody.style.top = -bodyScrollTop + 'px';
+      domBody.style.position = 'fixed';
+      domBody.style.overflowY = 'hidden';
+
 
       dialog.style.display = 'block';
       overlay.style.display = 'block';
@@ -111,6 +119,12 @@
   function hide(dialog) {
       unbind(dialog, 'click', events);
       fnEvent = {};
+
+      domBody.style.position = 'static';
+      domBody.style.top = 0;
+      domBody.style.overflowY = 'auto';
+      domBody.scrollTop = bodyScrollTop;
+
       overlay.style.display = 'none';
       dialog.style.display = 'none';   
   }

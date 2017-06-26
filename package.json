@@ -1,0 +1,23 @@
+{
+  "name": "gb-dialog",
+  "version": "1.0.0",
+  "description": "pop-up layer",
+  "main": "./src/js/gb-dialog.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/givebest/GB-dialog.git"
+  },
+  "keywords": [
+    "layer",
+    "dialog"
+  ],
+  "author": "givebest",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/givebest/GB-dialog/issues"
+  },
+  "homepage": "https://github.com/givebest/GB-dialog#readme"
+}
